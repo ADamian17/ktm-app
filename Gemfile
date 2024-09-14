@@ -31,6 +31,14 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem "rack-cors"
 
+gem "graphql", "~> 2.3"
+
+gem "graphql-batch"
+
+gem "sprockets-rails", "~> 3.5"
+
+gem "net-pop", "~> 0.1.2", github: "ruby/net-pop"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -44,10 +52,12 @@ group :development, :test do
   gem "graphiql-rails"
 end
 
-gem "graphql", "~> 2.3"
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+end
 
-gem "graphql-batch"
-
-gem "sprockets-rails", "~> 3.5"
-
-gem "net-pop", "~> 0.1.2", github: "ruby/net-pop"
+group :development do
+  gem "graphiql-rails"
+end
