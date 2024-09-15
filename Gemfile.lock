@@ -124,6 +124,8 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.7.2)
+    jwt (2.8.2)
+      base64
     language_server-protocol (3.17.0.3)
     logger (1.6.1)
     loofah (2.22.0)
@@ -295,6 +297,7 @@ DEPENDENCIES
   graphiql-rails
   graphql (~> 2.3)
   graphql-batch
+  jwt
   net-pop (~> 0.1.2)!
   pg (~> 1.1)
   puma (>= 5.0)

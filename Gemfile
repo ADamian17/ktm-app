@@ -39,6 +39,9 @@ gem "sprockets-rails", "~> 3.5"
 
 gem "net-pop", "~> 0.1.2", github: "ruby/net-pop"
 
+# Use Json Web Token (JWT) for token based authentication
+gem "jwt"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
