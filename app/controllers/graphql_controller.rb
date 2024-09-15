@@ -54,7 +54,9 @@ class GraphqlController < ApplicationController
     token = request.headers[:Authorization].to_s.split(" ").last
 
     return unless token
+
     decoded_token = JsonWebToken.decode(token)
+
     User.find(decoded_token["user_id"])
   end
 end

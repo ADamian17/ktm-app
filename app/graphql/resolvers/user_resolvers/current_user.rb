@@ -1,18 +1,18 @@
 module Resolvers
-  module UserResolvers
-    class CurrentUser < Resolvers::BaseResolver
-      description "Get user by ID"
+  class UserResolvers::CurrentUser < Resolvers::BaseResolver
+    description "Get user by ID"
 
-      type Types::UserTypes::UserType, null: true
+    null true
 
-      def resolve
-        return nil unless context[:current_user]
+    type Types::UserTypes::UserType, null: true
 
-        User.find(context[:current_user].id)
+    def resolve
+      return nil unless context[:current_user]
 
-      rescue ActiveRecord::RecordNotFound => _e
-        GraphQL::ExecutionError.new("User with ID #{id} not found")
-      end
+      User.find(context[:current_user].id)
+
+    rescue ActiveRecord::RecordNotFound => e
+      GraphQL::ExecutionError.new(e.message)
     end
   end
 end

@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  enum role: { adimn: 0, user: 1 }
+  enum role: { admin: 0, user: 1 }
 end
