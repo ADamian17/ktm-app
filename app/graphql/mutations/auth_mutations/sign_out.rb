@@ -1,15 +1,17 @@
 module Mutations
-  class AuthMutations::SignOut < GraphQL::Schema::Mutation
-    description "Sign out a user"
+  module AuthMutations
+    class SignOut < GraphQL::Schema::Mutation
+      description "Sign out a user"
 
-    field :success, Boolean, null: false
+      field :success, Boolean, null: false
 
-    def resolve
-      return { success: false } unless context[:current_user]
+      def resolve
+        return { success: false } unless context[:current_user]
 
-      context[:current_user] = nil
+        context[:current_user] = nil
 
-      { success: true }
+        { success: true }
+      end
     end
   end
 end

@@ -8,5 +8,7 @@ module Types
 
     # User mutations
     field :create_user, mutation: Mutations::UserMutations::Create
+    field :delete_user, mutation: Mutations::UserMutations::Destroy
+    field :update_user, mutation: Mutations::UserMutations::Update
   end
 end
