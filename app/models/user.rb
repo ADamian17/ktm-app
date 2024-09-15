@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  enum role: [ :admin, :user ]
+  validates :role, presence: true, inclusion: { in: %w[admin user], message: "%{value} is not a valid role" }
 end

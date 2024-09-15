@@ -26,6 +26,8 @@ RSpec.describe 'GraphQL CreateUser Mutation', type: :request do
     user_data = result['data']['createUser']
 
     expect(user_data['firstName']).to eq("John")
+    expect(user_data['lastName']).to eq("Doe")
+    expect(user_data['role']).to eq("admin")
     expect(User.find(user_data['id']).email).to eq("john@example.com")
   end
 end
