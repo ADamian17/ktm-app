@@ -10,4 +10,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :role, presence: true, inclusion: { in: %w[admin user], message: "%{value} is not a valid role" }
+
+  has_many :boards
 end
