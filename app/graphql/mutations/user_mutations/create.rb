@@ -1,6 +1,7 @@
 module Mutations
   module UserMutations
     class Create < BaseMutation
+      graphql_name "CreateUser"
       description "Create a new user"
 
       input_object_class Types::UserTypes::UserCreateInputType

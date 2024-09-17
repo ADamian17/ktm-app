@@ -1,6 +1,7 @@
 module Mutations
   module UserMutations
     class Destroy < GraphQL::Schema::Mutation
+      graphql_name "DeleteUser"
       description "Delete an user"
 
       field :success, Boolean, null: false

@@ -1,6 +1,7 @@
 module Mutations
   module UserMutations
     class Update < BaseMutation
+      graphql_name "UpdateUser"
       description "Update an user"
 
       input_object_class Types::UserTypes::UserUpdateInputType
