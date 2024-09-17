@@ -11,7 +11,7 @@ module Mutations
       def resolve(first_name: nil, last_name: nil, email: nil, password: nil)
         return nil unless context[:current_user]
 
-        user = User.find(context[:current_user].id)
+        user = context[:current_user]
 
         return GraphQL::ExecutionError.new("User not found") unless user
 
