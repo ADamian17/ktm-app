@@ -13,5 +13,6 @@ module Types
 
     # Board mutations
     field :create_board, mutation: Mutations::BoardsMutations::Create
+    field :update_board, mutation: Mutations::BoardsMutations::Update
   end
 end
