@@ -15,5 +15,10 @@ module Types
     field :create_board, mutation: Mutations::BoardsMutations::Create
     field :delete_board, mutation: Mutations::BoardsMutations::Destroy
     field :update_board, mutation: Mutations::BoardsMutations::Update
+
+    # Column mutations
+    field :create_column, mutation: Mutations::ColumnMutations::Create
+    field :delete_column, mutation: Mutations::ColumnMutations::Destroy
+    field :update_column, mutation: Mutations::ColumnMutations::Update
   end
 end

@@ -13,7 +13,7 @@ module Mutations
 
         board = Board.find(id)
 
-        return GraphQL::ExecutionError.new("User not found") unless board
+        return GraphQL::ExecutionError.new("Board not found") unless board
 
         board.destroy
 

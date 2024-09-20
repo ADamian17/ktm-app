@@ -107,6 +107,8 @@ GEM
     diff-lcs (1.5.1)
     drb (2.2.1)
     erubi (1.13.0)
+    factory_bot (6.5.0)
+      activesupport (>= 5.0.0)
     fiber-storage (1.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -312,6 +314,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  factory_bot (~> 6.5)
   graphiql-rails
   graphql (~> 2.3)
   graphql-batch
