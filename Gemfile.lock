@@ -120,6 +120,11 @@ GEM
     graphql-batch (0.6.0)
       graphql (>= 1.12.18, < 3)
       promise.rb (~> 0.7.2)
+    graphql-rails_logger (1.2.4)
+      actionpack (> 5.0)
+      activesupport (> 5.0)
+      railties (> 5.0)
+      rouge (~> 3.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -223,6 +228,7 @@ GEM
     reline (0.5.10)
       io-console (~> 0.5)
     rexml (3.3.7)
+    rouge (3.30.0)
     rspec-core (3.13.1)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.3)
@@ -318,6 +324,7 @@ DEPENDENCIES
   graphiql-rails
   graphql (~> 2.3)
   graphql-batch
+  graphql-rails_logger (~> 1.2, >= 1.2.4)
   jwt
   net-pop (~> 0.1.2)!
   pg (~> 1.1)

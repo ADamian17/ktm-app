@@ -20,5 +20,10 @@ module Types
     field :create_column, mutation: Mutations::ColumnMutations::Create
     field :delete_column, mutation: Mutations::ColumnMutations::Destroy
     field :update_column, mutation: Mutations::ColumnMutations::Update
+
+    # Task mutations
+    field :create_task, mutation: Mutations::TaskMutations::Create
+    # field :delete_task, mutation: Mutations::TaskMutations::Destroy
+    # field :update_task, mutation: Mutations::TaskMutations::Update
   end
 end

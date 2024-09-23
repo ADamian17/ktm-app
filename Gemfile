@@ -53,6 +53,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "graphiql-rails"
+
+  gem "graphql-rails_logger", "~> 1.2", ">= 1.2.4"
 end
 
 group :test do
@@ -61,8 +63,4 @@ group :test do
   gem "capybara"
   gem "rspec-rails"
   gem "selenium-webdriver"
-end
-
-group :development do
-  gem "graphiql-rails"
 end
