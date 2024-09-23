@@ -4,6 +4,7 @@ class Task < ApplicationRecord
   }
 
   belongs_to :column
+  has_many :subtasks, dependent: :destroy
 
   validates :title, presence: true
   validates :description, presence: true
