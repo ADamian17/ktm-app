@@ -1,6 +1,7 @@
 module Mutations
   module TaskMutations
     class Create < BaseMutation
+      # graphql_name is for naming the mutation in the schema and we don't get in conflict with the other mutations using the same name class name Create
       graphql_name "CreateTask"
       description "Create a new task"
 
