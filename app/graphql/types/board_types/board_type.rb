@@ -7,6 +7,7 @@ module Types
       field :name, String
       field :uri, String
       field :user_id, Integer
+      field :columns, Types::ColumnTypes::ColumnType.connection_type, null: false
       field :created_at, GraphQL::Types::ISO8601DateTime, null: false
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     end

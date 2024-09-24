@@ -9,7 +9,7 @@ module Mutations
       type Types::SubtaskTypes::SubtaskType
 
       def resolve(id: nil, **args)
-        return nil unless context[:current_user]
+        return GraphQL::ExecutionError, "You must be logged in!" unless context[:current_user]
 
         subtask = Subtask.find_by(id: id)
 

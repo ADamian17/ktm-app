@@ -53,9 +53,11 @@ class GraphqlController < ApplicationController
   def current_user
     token = request.headers[:Authorization].to_s.split(" ").last
 
-    return unless token
+    raise GraphQL::ExecutionError.new("Token is missing") unless token
 
     decoded_token = JsonWebToken.decode(token)
+
+    raise GraphQL::ExecutionError.new("Invalid token") unless decoded_token
 
     User.find(decoded_token["user_id"])
   end

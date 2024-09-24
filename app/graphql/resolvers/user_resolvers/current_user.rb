@@ -8,8 +8,6 @@ module Resolvers
       type Types::UserTypes::UserType, null: true
 
       def resolve
-        return nil unless context[:current_user]
-
         User.find(context[:current_user].id)
 
       rescue ActiveRecord::RecordNotFound => e

@@ -20,5 +20,6 @@ module Types
 
     # root-level fields here.
     field :current_user, resolver: Resolvers::UserResolvers::CurrentUser
+    field :get_all_boards, resolver: Resolvers::BoardResolvers::GetAll
   end
 end
