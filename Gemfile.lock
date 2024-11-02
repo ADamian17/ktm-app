@@ -173,7 +173,6 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
-    pg (1.5.8)
     promise.rb (0.7.4)
     psych (5.1.2)
       stringio
@@ -333,7 +332,6 @@ DEPENDENCIES
   graphql-rails_logger (~> 1.2, >= 1.2.4)
   jwt
   net-pop (~> 0.1.2)!
-  pg (~> 1.1)
   puma (>= 5.0)
   rack-cors
   rails (~> 7.2.1)
