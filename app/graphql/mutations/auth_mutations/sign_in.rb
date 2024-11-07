@@ -8,7 +8,8 @@ module Mutations
       argument :email, String, required: true
       argument :password, String, required: true
 
-      field :token, String, null: true
+      field :access_token, String, null: true
+      field :refresh_token, String, null: true
       field :user, Types::UserTypes::UserType, null: true
 
       def resolve(email:, password:)
@@ -17,8 +18,13 @@ module Mutations
         return nil unless user
 
         if user&.authenticate(password)
-           token = JsonWebToken.encode(user_id: user.id)
-          { user: user, token: token }
+          tokens = user.generate_tokens
+
+          {
+            user: user,
+            access_token: tokens[:access_token],
+            refresh_token: tokens[:refresh_token]
+          }
         else
           GraphQL::ExecutionError.new("Invalid email or password")
         end

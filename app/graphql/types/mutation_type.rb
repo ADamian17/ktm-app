@@ -5,6 +5,7 @@ module Types
     # Auth mutations
     field :sign_in_user, mutation: Mutations::AuthMutations::SignIn
     field :sign_out_user, mutation: Mutations::AuthMutations::SignOut
+    field :refresh_token, mutation: Mutations::RefreshToken
 
     # User mutations
     field :create_user, mutation: Mutations::UserMutations::Create

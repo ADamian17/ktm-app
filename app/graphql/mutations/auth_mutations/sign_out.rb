@@ -8,7 +8,8 @@ module Mutations
       def resolve
         return { success: false } unless context[:current_user]
 
-        context[:current_user] = nil
+        user = context[:current_user]
+        user.update(refresh_token: nil, expires_at: nil)
 
         { success: true }
       end
