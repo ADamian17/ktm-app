@@ -43,7 +43,7 @@ gem "jwt"
 
 gem "sqlite3"
 
-gem "graphql-rails_logger", "~> 1.2", ">= 1.2.4"
+gem "graphql-rails_logger", "~> 1.2"
 
 gem "graphiql-rails"
 
