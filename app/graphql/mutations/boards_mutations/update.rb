@@ -17,7 +17,6 @@ module Mutations
 
         params = {
           name: args[:name],
-          uri: args[:uri],
           columns_attributes: args[:columns_attributes]&.map(&:to_h) || []
         }
 
