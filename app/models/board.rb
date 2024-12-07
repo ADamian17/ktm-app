@@ -1,8 +1,12 @@
 class Board < ApplicationRecord
+  before_validation {
+    self.name = name.downcase
+  }
+
   belongs_to :user
   has_many :columns, dependent: :destroy
 
-  validates :name, presence: true, format: {
+  validates :name, presence: true, uniqueness: true, format: {
     with: /\A[a-zA-Z\s]+\z/, message: "only letters and spaces allowed"
   }
 
