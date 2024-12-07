@@ -15,7 +15,13 @@ module Mutations
 
         return GraphQL::ExecutionError.new("Board not found") unless board
 
-        board.update!(args)
+        params = {
+          name: args[:name],
+          uri: args[:uri],
+          columns_attributes: args[:columns_attributes]&.map(&:to_h) || []
+        }
+
+        board.update!(params)
 
         board
       rescue ActiveRecord::RecordInvalid => e
