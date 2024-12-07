@@ -5,6 +5,7 @@ class Board < ApplicationRecord
 
   belongs_to :user
   has_many :columns, dependent: :destroy
+  accepts_nested_attributes_for :columns, allow_destroy: true, reject_if: :all_blank
 
   validates :name, presence: true, uniqueness: true, format: {
     with: /\A[a-zA-Z\s]+\z/, message: "only letters and spaces allowed"

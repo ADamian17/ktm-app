@@ -8,12 +8,15 @@ module Mutations
 
       type Types::BoardTypes::BoardType
 
-      def resolve(name: nil)
+      def resolve(name: nil, columns_attributes: nil)
         return nil unless context[:current_user]
+
+        columns = columns_attributes&.map(&:to_h) || []
 
         Board.create!(
           name: name,
-          user: context[:current_user]
+          user: context[:current_user],
+          columns_attributes: columns
         )
 
       rescue ActiveRecord::RecordInvalid => e
