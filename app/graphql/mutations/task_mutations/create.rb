@@ -9,18 +9,21 @@ module Mutations
 
       type Types::TaskTypes::TaskType
 
-      def resolve(title: nil, description: nil, column_id: nil)
+      def resolve(title: nil, description: nil, column_id: nil, subtasks_attributes: nil)
         return nil unless context[:current_user]
 
         column = Column.find_by(id: column_id)
 
         return GraphQL::ExecutionError.new("Column not found") unless column
 
+        subtasks = subtasks_attributes&.map(&:to_h) || []
+
         Task.create!(
           title: title,
           description: description,
           column: column,
-          status: column[:name]
+          status: column[:name],
+          subtasks_attributes: subtasks
         )
 
       rescue ActiveRecord::RecordInvalid => e
