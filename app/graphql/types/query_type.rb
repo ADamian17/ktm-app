@@ -22,5 +22,6 @@ module Types
     field :current_user, resolver: Resolvers::UserResolvers::CurrentUser
     field :get_all_boards, resolver: Resolvers::BoardResolvers::GetAll
     field :get_one_board, resolver: Resolvers::BoardResolvers::GetOne
+    field :get_one_task, resolver: Resolvers::TaskResolvers::GetOne
   end
 end
