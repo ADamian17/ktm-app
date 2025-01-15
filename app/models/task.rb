@@ -5,7 +5,7 @@ class Task < ApplicationRecord
 
   belongs_to :column
   has_many :subtasks, dependent: :destroy
-  accepts_nested_attributes_for :subtasks, allow_destroy: true
+  accepts_nested_attributes_for :subtasks, allow_destroy: true, reject_if: :all_blank
 
   validates :title, presence: true
   validates :description, presence: true
