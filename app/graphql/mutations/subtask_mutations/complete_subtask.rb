@@ -1,7 +1,7 @@
 module Mutations
   module SubtaskMutations
     class CompleteSubtask < Mutations::BaseMutation
-      graphql_name "CompleteSubtask"
+      graphql_name "completeSubtask"
       description "Sets subtask to completed"
 
       argument :id, ID, required: true, description: "Subtask ID"
