@@ -15,9 +15,10 @@ module Mutations
 
         return GraphQL::ExecutionError.new("Board not found") unless board
 
+        columns = args[:columns_attributes]&.map { |column| column.to_h.except(:column_color) } || []
         params = {
           name: args[:name],
-          columns_attributes: args[:columns_attributes]&.map(&:to_h) || []
+          columns_attributes: columns
         }
 
         board.update!(params)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_07_013406) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_24_054423) do
   create_table "boards", force: :cascade do |t|
     t.string "name"
     t.string "uri"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_013406) do
     t.bigint "board_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "column_color", default: "#FFFFFF"
     t.index ["board_id"], name: "index_columns_on_board_id"
   end
 
