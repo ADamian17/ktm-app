@@ -70,6 +70,7 @@ type BoardEdge {
 
 type Column {
   boardId: Int!
+  columnColor: String!
   createdAt: ISO8601DateTime!
   id: ID!
   name: String
@@ -147,6 +148,11 @@ input ColumnInput {
   _destroy: Boolean
 
   """
+  The column color
+  """
+  columnColor: String
+
+  """
   The ID of the column
   """
   id: ID
@@ -200,6 +206,11 @@ input CreateColumnInput {
   The name of the column
   """
   name: String!
+
+  """
+  The tasks of the column
+  """
+  tasksAttributes: [TaskInput!]
 }
 
 """
@@ -858,6 +869,26 @@ type TaskEdge {
 }
 
 """
+Attributes new task
+"""
+input TaskInput {
+  """
+  Task mark for deletion
+  """
+  _destroy: Boolean
+
+  """
+  The id of the task to update
+  """
+  id: ID
+
+  """
+  The title of the task
+  """
+  title: String!
+}
+
+"""
 Attributes for updating a board
 """
 input UpdateBoardInput {
@@ -905,6 +936,11 @@ input UpdateColumnInput {
   The name of the column
   """
   name: String
+
+  """
+  The tasks of the column
+  """
+  tasksAttributes: [TaskInput!]
 }
 
 """

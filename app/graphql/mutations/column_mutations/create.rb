@@ -8,12 +8,15 @@ module Mutations
 
       type Types::ColumnTypes::ColumnType
 
-      def resolve(name: nil, board_id: nil)
+      def resolve(name: nil, board_id: nil, tasks_attributes: nil)
         return nil unless context[:current_user]
+
+        tasks = tasks_attributes&.map(&:to_h) || []
 
         Column.create!(
           name: name,
-          board_id: board_id
+          board_id: board_id,
+          tasks_attributes: tasks
         )
 
       rescue ActiveRecord::RecordInvalid => e
