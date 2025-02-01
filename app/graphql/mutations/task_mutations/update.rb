@@ -25,7 +25,6 @@ module Mutations
           title: args[:title],
           description: args[:description],
           column: column,
-          status: column[:name],
           subtasks_attributes: subtasks
         }
 

@@ -22,7 +22,6 @@ module Mutations
           title: title,
           description: description,
           column: column,
-          status: column[:name],
           subtasks_attributes: subtasks
         )
 

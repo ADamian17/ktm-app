@@ -27,8 +27,8 @@ RSpec.describe "Task Model", type: :model do
   end
 
   it "downcases the status before saving" do
-    task = Task.new(title: "Test Task", description: "Test Description", status: "OPEN", column: @column)
+    task = Task.new(title: "Test Task", description: "Test Description", column: @column)
     task.save
-    expect(task.status).to eq("open")
+    expect(task.status).to eq("test board")
   end
 end
